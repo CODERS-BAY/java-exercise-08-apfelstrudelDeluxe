@@ -4,6 +4,8 @@ package at.linkedlist;
 
 import at.linkedlist.StringElement;
 
+import java.util.Iterator;
+
 public class LinkedList {
     private StringElement head; // head of list
 
@@ -106,16 +108,15 @@ public class LinkedList {
     }
 
 
-/**
- * Removes a node at position index from the list
- *
- * @param index
- * @return Returns true (at least one node deleted) or false (no node deleted).
- */
+    /**
+     * Removes a node at position index from the list
+     *
+     * @param index
+     * @return Returns true (at least one node deleted) or false (no node deleted).
+     */
 
     // VERSUCH KARIN
     //::::::::::::::::::::::::
-
     public boolean remove(int index) {
         StringElement current = head;
         StringElement foundCurrent = null;  // Node #1, wichtig für neue Verbindung nach remove
@@ -134,7 +135,7 @@ public class LinkedList {
 
                 found = true;
             } else {   // no match found
-               foundCurrent = current;
+                foundCurrent = current;
             }
             current = current.getNext();
         }
@@ -194,22 +195,19 @@ public class LinkedList {
 
     // VERSUCH KARIN
     //::::::::::::::::::::::::
-
-    public boolean indexOf(String val) {
+    public String iterator(String iter) {
         StringElement current = head;
-        StringElement foundCurrent = null;  // Node #1, wichtig für neue Verbindung nach remove
-        boolean found = false;
-        do {     // do, weil ich von oben bis unten durchlaufen will
-            if (val.contains(current.getValue())) {  // match found: Ist der Value von der Methode, der gleiche Value ist wie current.
-                found = true;
-            } else {   // no match found
-                foundCurrent = current;
+        String currentString = " ";
+        while (iter.equals(currentString)) {
+            if (iter == currentString) {
+                return currentString;
             }
-            current = current.getNext();
         }
-        while (current != null);    // do while, weil der Head auch betroffen ist. != null damit alles erwischt wird.
-        return found;
-    }
 
+        return currentString;
+    }
 }
+
+
+
 

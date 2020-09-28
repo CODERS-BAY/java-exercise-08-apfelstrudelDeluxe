@@ -2,6 +2,8 @@
 
 package at.linkedlist;
 
+import java.util.Iterator;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -12,6 +14,7 @@ public class Main {
         element.setValue("head node");
 
 
+
         // Linked List anlegen
         LinkedList list = new LinkedList(element);
         System.out.println(" --Head only:-- ");
@@ -20,6 +23,7 @@ public class Main {
         list.append("second value");
         list.append("third value");
         list.append("fourth value");
+
 
         System.out.println("##> head with append value:");
         list.printAll();
@@ -45,7 +49,8 @@ public class Main {
         System.out.println(list.get(1000));
 
         System.out.println("Returns the first occurence of val in the list");
-        System.out.println(list.indexOf("head node"));
+        System.out.println("We found " + list.iterator("head node"));
+
 
         System.out.println("Removes a node at position index from the list");
         System.out.println(list.remove(1));
